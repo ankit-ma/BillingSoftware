@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="billingPane" onMouseClicked="#paneClickListner" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.billingsoftware.BillingDashboard">
+   <children>
+      <Label fx:id="userText" alignment="CENTER" layoutX="762.0" layoutY="41.0" prefHeight="17.0" prefWidth="102.0" text="User" textFill="#ee0606" />
+      <Separator layoutX="27.0" layoutY="61.0" prefHeight="3.0" prefWidth="851.0" style="-fx-background-color: blue;" />
+      <SplitPane dividerPositions="0.6590106007067138" layoutX="28.0" layoutY="64.0" prefHeight="506.0" prefWidth="851.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="504.0" prefWidth="580.0">
+               <children>
+                  <TableView fx:id="itemTable" layoutX="-1.0" prefHeight="505.0" prefWidth="560.0">
+                    <columns>
+                      <TableColumn fx:id="productIDColumn" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="productNameColumn" prefWidth="155.47518157958984" text="Product Name" />
+                        <TableColumn fx:id="mrpColumn" prefWidth="75.56820678710938" text="MRP" />
+                        <TableColumn fx:id="stockColumn" prefWidth="75.43179321289062" text="Stock" />
+                        <TableColumn fx:id="discountColumn" prefWidth="81.43182373046875" text="Discount(%)" />
+                        <TableColumn fx:id="sellingProceColumn" prefWidth="97.83029174804688" text="Total price" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#pane2clickListner" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: grey;">
+               <children>
+                  <Button fx:id="addButton" layoutX="99.0" layoutY="215.0" mnemonicParsing="false" onAction="#addButtonListner" prefHeight="26.0" prefWidth="89.0" text="Add Item" textFill="#fcf7f7" />
+                  <Label layoutX="24.0" layoutY="29.0" text="Product Name :" textFill="WHITE" />
+                  <Label fx:id="productNameLabel" layoutX="116.0" layoutY="29.0" textFill="#11ed07" />
+                  <Label layoutX="21.0" layoutY="61.0" prefHeight="17.0" prefWidth="87.0" text=" Quantity             :" textFill="WHITE" />
+                  <TextField fx:id="quantityInput" layoutX="120.0" layoutY="55.0" onMouseExited="#quantityInputChangeListner" prefHeight="26.0" prefWidth="94.0" text="0" />
+                  <Label layoutX="26.0" layoutY="103.0" text="Discount(%)    :" textFill="#f8f6f6" />
+                  <Label fx:id="discountLabel" layoutX="127.0" layoutY="104.0" prefHeight="17.0" prefWidth="85.0" textFill="#08f56f" />
+                  <Label layoutX="26.0" layoutY="141.0" text="MRP                    :" textFill="#f8f6f6" />
+                  <Label layoutX="25.0" layoutY="171.0" text="Total Price         :" textFill="#f5f2f2" />
+                  <Label fx:id="totalPriceLabel" layoutX="127.0" layoutY="170.0" prefHeight="30.0" prefWidth="92.0" textFill="#03f530" />
+                  <Label fx:id="mrpLabel" layoutX="127.0" layoutY="139.0" prefHeight="30.0" prefWidth="91.0" textFill="#04eb0c" />
+                  <Separator layoutX="-4.0" layoutY="260.0" prefHeight="2.0" prefWidth="290.0" />
+                  <Label layoutX="128.0" layoutY="266.0" text="Bill" textFill="#d7ed98">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="29.0" layoutY="302.0" text="Items :" textFill="#fcfafa" />
+                  <Label layoutX="28.0" layoutY="344.0" text="Total Amount :" textFill="#f2eeee" />
+                  <Label fx:id="billItem" layoutX="123.0" layoutY="302.0" text="0" textFill="#40eb10" />
+                  <Label fx:id="totalAmount" layoutX="126.0" layoutY="344.0" text="0" textFill="#20f824" />
+                  <Button fx:id="generateBillButton" layoutX="103.0" layoutY="407.0" mnemonicParsing="false" onAction="#generateBillListner" text="Generate Bill" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Button fx:id="logoutButton" layoutX="32.0" layoutY="571.0" mnemonicParsing="false" onAction="#logoutButtonListner" text="Log Out" />
+      <Label layoutX="27.0" layoutY="21.0" text="Janta Store">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchInput" layoutX="243.0" layoutY="35.0" onInputMethodTextChanged="#onInputActionListner" onMouseClicked="#onInputActionListner" prefHeight="26.0" prefWidth="241.0" />
+      <Button fx:id="searchButton" layoutX="499.0" layoutY="36.0" mnemonicParsing="false" onAction="#onSearchButtonListner" text="Search" textFill="#f8f5f5" />
+      <ListView fx:id="listview" layoutX="245.0" layoutY="59.0" onMouseClicked="#listviewClickListner" opacity="0.8" prefHeight="200.0" prefWidth="239.0" />
+   </children>
+</AnchorPane>

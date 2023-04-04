@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="billLayout" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.billingsoftware.BillPrintScence">
+   <children>
+      <AnchorPane fx:id="billViewPane" prefHeight="551.0" prefWidth="833.0">
+         <children>
+            <TableView fx:id="billTable" layoutX="31.0" layoutY="96.0" prefHeight="438.0" prefWidth="511.0">
+              <columns>
+                <TableColumn fx:id="productID" prefWidth="52.487125396728516" text="ID" />
+                <TableColumn fx:id="productName" prefWidth="143.01288604736328" text="Product Name" />
+                  <TableColumn fx:id="quantity" prefWidth="75.0" text="Quantity" />
+                  <TableColumn fx:id="mrp" prefWidth="75.0" text="MRP" />
+                  <TableColumn fx:id="discount" prefWidth="75.0" text="Discount(%)" />
+                  <TableColumn fx:id="totalPrice" prefWidth="89.070556640625" text="Total price" />
+              </columns>
+            </TableView>
+            <TextField fx:id="phoneNumber" layoutX="648.0" layoutY="282.0" />
+            <Label layoutX="551.0" layoutY="227.0" text="Customer Name:" />
+            <Label layoutX="553.0" layoutY="285.0" text="Phone Number :" />
+            <TextField fx:id="customerName" layoutX="651.0" layoutY="224.0" />
+            <Label layoutX="609.0" layoutY="117.0" text="JANTA STORE" underline="true">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="63.0" layoutY="64.0" text="DATE :" />
+            <Label fx:id="dateLabel" layoutX="105.0" layoutY="63.0" text="00" />
+            <Label layoutX="398.0" layoutY="72.0" text="Bill Number :" />
+            <Label fx:id="nillNumber" layoutX="486.0" layoutY="72.0" text="01" />
+            <Label layoutX="562.0" layoutY="346.0" text="Total Amount : " />
+            <Label fx:id="totalAmount" layoutX="667.0" layoutY="346.0" text="Label" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="printButton" layoutX="675.0" layoutY="556.0" mnemonicParsing="false" onAction="#printButtonListner" text="Print" />
+   </children>
+</AnchorPane>
